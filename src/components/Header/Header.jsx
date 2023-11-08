@@ -34,7 +34,7 @@ const Header = () => {
                                 <li className="submenu dropdown">
                                     <Link to="/holiday" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Holidays <i className="icon-arrow-down" aria-hidden="true"></i></Link> 
                                     <ul className="dropdown-menu">
-                                        <li><Link to="tour-grid.html">Tour Grid</Link></li>
+                                        <li><Link to="/tour">Tour Grid</Link></li>
                                         <li><Link to="tour-single.html">Tour Single </Link></li>
                                     </ul> 
                                 </li>
