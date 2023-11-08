@@ -8,6 +8,8 @@ import About from "./pages/About";
 import Tour from "./pages/Tour";
 import Blog from "./pages/Blog/Index";
 import Privacy from "./pages/Privacy";
+import Cookie from "./pages/Cookie";
+import Terms from "./pages/Terms";
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/tour" element={<Tour />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/cookie" element={<Cookie />} />
+        <Route path="/terms" element={<Terms />} />
 
 
         {/* <Route path="/form" element={<Form />} /> */}
