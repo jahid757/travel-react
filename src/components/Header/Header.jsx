@@ -42,7 +42,7 @@ const Header = () => {
                                 <li className="submenu dropdown">
                                     <Link to={'/blog'} className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <i className="icon-arrow-down" aria-hidden="true"></i></Link> 
                                     <ul className="dropdown-menu">
-                                        <li><Link to="/blog-list">Blog List</Link></li>
+                                        <li><Link to="/blog">Blog List</Link></li>
                                         <li><Link to="/blog-single">Blog Single</Link></li>
                                     </ul> 
                                 </li>
