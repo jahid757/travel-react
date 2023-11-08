@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Tour from "./pages/Tour";
 import Blog from "./pages/Blog/Index";
+import Privacy from "./pages/Privacy";
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/tour" element={<Tour />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/privacy" element={<Privacy />} />
+
 
         {/* <Route path="/form" element={<Form />} /> */}
         <Route path="*" element={<NotFound />} />

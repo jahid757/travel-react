@@ -31,10 +31,10 @@ const Footer = () => {
                             <h3 className="white">Quick link</h3>
                             <ul>
                                 <li><Link to="/about">About Us</Link></li>
-                                <li><Link to="privacy.html">Privacy Policy</Link></li>
-                                <li><Link to="terms.html">Terms &amp; Conditions</Link></li>
+                                <li><Link to="/privacy">Privacy Policy</Link></li>
+                                <li><Link to="/terms">Terms &amp; Conditions</Link></li>
                                 <li><Link to="/">Refund Policy</Link></li>
-                                <li><Link to="cookie.html">Cookie</Link></li>
+                                <li><Link to="/cookie">Cookie</Link></li>
                             </ul>
                         </div>
                     </div>
