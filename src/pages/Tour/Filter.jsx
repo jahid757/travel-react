@@ -1,6 +1,14 @@
 import React from 'react';
 import trndingImage from '../../assets/images/trending2.jpg'
 import { Link } from 'react-router-dom';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+
 const Filter = () => {
     return (
         <section className="trending pt-6 pb-0 bg-lgrey">
@@ -356,9 +364,23 @@ const Filter = () => {
 
                             <div className="sidebar-item">
                                 <h3>Related Destinations</h3>
+
                                 <div className="sidebar-destination">
-                                    <div className="row about-slider">
-                                        <div className="col-lg-4 col-md-6 col-sm-6 mb-4">
+                                    <Swiper className="row about-slider"
+                                        speed={3000}
+                  loop={true}
+                  spaceBetween={30}
+                  centeredSlides={true}
+                  autoplay={{
+                    delay: 4000,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  modules={[Autoplay, Pagination, Navigation]}
+                                    >
+                                        <SwiperSlide className="col-lg-4 col-md-6 col-sm-6 mb-4">
                                             <div className="trend-item1">
                                                 <div className="trend-image position-relative rounded">
                                                 <img src={trndingImage} alt='' />
@@ -372,8 +394,8 @@ const Filter = () => {
                                                     <div className="color-overlay"></div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-6 mb-4">
+                                        </SwiperSlide>
+                                        <SwiperSlide className="col-lg-4 col-md-6 col-sm-6 mb-4">
                                             <div className="trend-item1">
                                                 <div className="trend-image position-relative rounded">
                                                     <img src={trndingImage} alt='' />
@@ -387,9 +409,10 @@ const Filter = () => {
                                                     <div className="color-overlay"></div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        </SwiperSlide>
+                                    </Swiper>
                                 </div>
+
                             </div>
                         </div>
                     </div>
