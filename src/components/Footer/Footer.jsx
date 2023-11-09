@@ -44,7 +44,7 @@ const Footer = () => {
                             <h3 className="white">Newsletter</h3>
                             <div className="newsletter-form ">
                                 <p className="mb-3">Jin our community of over 200,000 global readers who receives emails filled with news, promotions, and other good stuff.</p>
-                                <form action="#" method="get" accept-charset="utf-8" className="border-0 d-flex align-items-center">
+                                <form action="#" method="get" acceptCharset="utf-8" className="border-0 d-flex align-items-center">
                                     <input type="text" placeholder="Email Address"/>
                                     <button className="nir-btn ms-2">Subscribe</button>
                                 </form>

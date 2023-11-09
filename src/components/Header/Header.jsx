@@ -35,7 +35,7 @@ const Header = () => {
                                     <Link to="/holiday" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Holidays <i className="icon-arrow-down" aria-hidden="true"></i></Link> 
                                     <ul className="dropdown-menu">
                                         <li><Link to="/tour">Tour Grid</Link></li>
-                                        <li><Link to="tour-single.html">Tour Single </Link></li>
+                                        <li><Link to="/tour-single/1">Tour Single </Link></li>
                                     </ul> 
                                 </li>
 
@@ -43,7 +43,7 @@ const Header = () => {
                                     <Link to={'/blog'} className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <i className="icon-arrow-down" aria-hidden="true"></i></Link> 
                                     <ul className="dropdown-menu">
                                         <li><Link to="/blog">Blog List</Link></li>
-                                        <li><Link to="/blog-single">Blog Single</Link></li>
+                                        <li><Link to="/blog-single/1">Blog Single</Link></li>
                                     </ul> 
                                 </li>
                                 <li className="search-main"><a href="#search1" className="mt_search"><i className="fa fa-search"></i></a></li>
