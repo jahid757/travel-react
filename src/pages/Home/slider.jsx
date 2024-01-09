@@ -71,16 +71,16 @@ const Slider = () => {
                     <div className="swiper-content">
                       <div className="entry-meta mb-2">
                         <h5 className="entry-category mb-0 white">
-                          { data[1].title}
+                          { data[0].title}
                         </h5>
                       </div>
                       <h1 className="mb-2">
                         <a href="tour-single.html" className="white">
-                          {data ? '' : data[1].subtitle}
+                          {data ? '' : data[0].subtitle}
                         </a>
                       </h1>
                       <p className="white mb-4">
-                        {data ? "" : data[1].description}
+                        {data ? "" : data[0].description}
                       </p>
                       <button className="nir-btn">Discover More</button>
                     </div>
@@ -96,18 +96,18 @@ const Slider = () => {
                     <div className="swiper-content">
                       <div className="entry-meta mb-2">
                         <h5 className="entry-category mb-0 white">
-                          Explore Travel
+                          { data[0].title}
                         </h5>
                       </div>
                       <h1 className="mb-2">
                         <a href="tour-single.html" className="white">
-                          Effective Travel and Expense Management.
+                          {data ? '' : data[0].subtitle}
                         </a>
                       </h1>
                       <p className="white mb-4">
-                        For Fast Changing Corporate Travel
+                        {data ? "" : data[0].description}
                       </p>
-                      <button className="nir-btn">Read More</button>
+                      <button className="nir-btn">Discover More</button>
                     </div>
                     <div className="dot-overlay"></div>
                   </div>
@@ -121,18 +121,18 @@ const Slider = () => {
                     <div className="swiper-content">
                       <div className="entry-meta mb-2">
                         <h5 className="entry-category mb-0 white">
-                          Road To Travel
+                          { data[0].title}
                         </h5>
                       </div>
                       <h1 className="mb-2">
                         <a href="tour-single.html" className="white">
-                          Begin your Business adventure with us
+                          {data ? '' : data[0].subtitle}
                         </a>
                       </h1>
                       <p className="white mb-4">
-                        Swifter, Smarter, Smoother Travel.
+                        {data ? "" : data[0].description}
                       </p>
-                      <button className="nir-btn">Make An Enquiry</button>
+                      <button className="nir-btn">Discover More</button>
                     </div>
                     <div className="dot-overlay"></div>
                   </div>
