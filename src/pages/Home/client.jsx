@@ -3,7 +3,12 @@ import affle from '../../assets/images/client/affle.png'
 import digi from '../../assets/images/client/digi_logo.png'
 import vitamin from '../../assets/images/client/vitamin.png'
 import iotech from '../../assets/images/client/iotech.png'
+
+
+
+
 const Client = () => {
+
     return (
         <section className="our-partner pt-3 pb-0">
         <div className="container">

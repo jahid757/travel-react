@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -10,13 +10,36 @@ import 'swiper/css/navigation';
 import sliderImage1 from "../../assets/images/bg-hero.jpg";
 import sliderImage2 from "../../assets/images/bg-hero-2.jpg";
 import sliderImage3 from "../../assets/images/bg-hero-3.jpg";
+import { getHome } from "../../api-loading";
+
+
 
 
 // import { Navigation } from "swiper/modules";
 
 
+
 // Swiper.use([Navigation, Pagination, Autoplay]);
 const Slider = () => {
+
+  const [data,setData] = useState([])
+
+  // useEffect( () => {
+  //   fetch('https://trawelfreeby.jdinfotech.net/api/home')
+  //   .then(response => response.json())
+  //   .then(data => setData(data.data.slider))
+  //   },[])
+
+    const  getHome = async () =>{
+      const apiUrl = await fetch('https://trawelfreeby.jdinfotech.net/api/home')
+      const result = await apiUrl.json();
+      return setData(result)
+  }
+  useEffect( () => {
+    getHome()
+    },[])
+    console.log(data) // title ,subtitle, description
+  
   return (
     <section className="banner overflow-hidden">
       <div style={{ height: "300px" }} className="slider top50">
@@ -48,16 +71,16 @@ const Slider = () => {
                     <div className="swiper-content">
                       <div className="entry-meta mb-2">
                         <h5 className="entry-category mb-0 white">
-                          Amazing Places
+                          { data[1].title}
                         </h5>
                       </div>
                       <h1 className="mb-2">
                         <a href="tour-single.html" className="white">
-                          Make Your Business Trip Fun & Noted
+                          {data ? '' : data[1].subtitle}
                         </a>
                       </h1>
                       <p className="white mb-4">
-                        Reducing Business Travel Cost
+                        {data ? "" : data[1].description}
                       </p>
                       <button className="nir-btn">Discover More</button>
                     </div>
