@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import affle from '../../assets/images/client/affle.png'
 import digi from '../../assets/images/client/digi_logo.png'
 import vitamin from '../../assets/images/client/vitamin.png'
@@ -8,6 +8,17 @@ import iotech from '../../assets/images/client/iotech.png'
 
 
 const Client = () => {
+    const [data,setData] = useState(
+        {title:"Explore Travel",subtitle:"Effective Travel and Expense Management.",
+        logos:[
+            {url:''},
+            {url:''},
+            {url:''},
+            {url:''},
+            {url:''},
+        ]
+    },
+      )
 
     return (
         <section className="our-partner pt-3 pb-0">

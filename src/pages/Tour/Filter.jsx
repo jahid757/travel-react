@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 
 const Filter = () => {
     return (
-        <section className="trending pt-6 pb-0 bg-lgrey">
+        <section className="trending pt-6 pb-0">
         <div className="container">
             <div className="row">
                 <div className="col-lg-8">

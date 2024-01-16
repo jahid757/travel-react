@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import team1 from '../../assets/images/teams/img1.jpg'
@@ -7,6 +7,23 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const TourGuied = () => {
+
+    const [data,setData] = useState(
+        {title:"Tour Guides",subtitle:"Meet Our Excellent Guides", description:"We're with you while you're ON THE GO",
+        member:[
+            {username:"Shanjiv",position:'accountant',profile:""},
+            {username:"Shanjiv",position:'accountant',profile:""},
+            {username:"Shanjiv",position:'accountant',profile:""},
+            {username:"Shanjiv",position:'accountant',profile:""},
+            {username:"Shanjiv",position:'accountant',profile:""}
+        ]
+    },
+
+      )
+
+
+
+
     return (
         <section className="our-team pb-0">
         <div className="container">

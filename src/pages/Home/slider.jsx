@@ -22,23 +22,27 @@ import { getHome } from "../../api-loading";
 // Swiper.use([Navigation, Pagination, Autoplay]);
 const Slider = () => {
 
-  const [data,setData] = useState([])
+  const [data,setData] = useState([
+    {title:"Explore Travel",subtitle:"Effective Travel and Expense Management.", description:"For Fast Changing Corporate Travel"},
+    {title:"Explore Travel",subtitle:"Effective Travel and Expense Management.", description:"For Fast Changing Corporate Travel"},
+    {title:"Explore Travel",subtitle:"Effective Travel and Expense Management.", description:"For Fast Changing Corporate Travel"},
+  ])
 
+  // // useEffect( () => {
+  // //   fetch('https://trawelfreeby.jdinfotech.net/api/home')
+  // //   .then(response => response.json())
+  // //   .then(data => setData(data.data.slider))
+  // //   },[])
+
+  //   const  getHome = async () =>{
+  //     const apiUrl = await fetch('https://trawelfreeby.jdinfotech.net/api/home')
+  //     const result = await apiUrl.json();
+  //     return setData(result.slider)
+  // }
   // useEffect( () => {
-  //   fetch('https://trawelfreeby.jdinfotech.net/api/home')
-  //   .then(response => response.json())
-  //   .then(data => setData(data.data.slider))
+  //   getHome()
   //   },[])
-
-    const  getHome = async () =>{
-      const apiUrl = await fetch('https://trawelfreeby.jdinfotech.net/api/home')
-      const result = await apiUrl.json();
-      return setData(result)
-  }
-  useEffect( () => {
-    getHome()
-    },[])
-    console.log(data) // title ,subtitle, description
+  //   console.log(data) // title ,subtitle, description
   
   return (
     <section className="banner overflow-hidden">
@@ -76,11 +80,11 @@ const Slider = () => {
                       </div>
                       <h1 className="mb-2">
                         <a href="tour-single.html" className="white">
-                          {data ? '' : data[0].subtitle}
+                          { data[0].subtitle}
                         </a>
                       </h1>
                       <p className="white mb-4">
-                        {data ? "" : data[0].description}
+                        { data[0].description}
                       </p>
                       <button className="nir-btn">Discover More</button>
                     </div>
@@ -96,16 +100,16 @@ const Slider = () => {
                     <div className="swiper-content">
                       <div className="entry-meta mb-2">
                         <h5 className="entry-category mb-0 white">
-                          { data[0].title}
+                          { data[1].title}
                         </h5>
                       </div>
                       <h1 className="mb-2">
                         <a href="tour-single.html" className="white">
-                          {data ? '' : data[0].subtitle}
+                          { data[1].subtitle}
                         </a>
                       </h1>
                       <p className="white mb-4">
-                        {data ? "" : data[0].description}
+                        { data[1].description}
                       </p>
                       <button className="nir-btn">Discover More</button>
                     </div>
@@ -121,16 +125,16 @@ const Slider = () => {
                     <div className="swiper-content">
                       <div className="entry-meta mb-2">
                         <h5 className="entry-category mb-0 white">
-                          { data[0].title}
+                          { data[2].title}
                         </h5>
                       </div>
                       <h1 className="mb-2">
                         <a href="tour-single.html" className="white">
-                          {data ? '' : data[0].subtitle}
+                          { data[2].subtitle}
                         </a>
                       </h1>
                       <p className="white mb-4">
-                        {data ? "" : data[0].description}
+                        { data[2].description}
                       </p>
                       <button className="nir-btn">Discover More</button>
                     </div>
