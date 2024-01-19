@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React  from 'react';
 import { Link } from 'react-router-dom';
 
 import blog_img from '../../assets/images/blog/blog1.jpg'
 import team_1 from '../../assets/images/teams/img2.jpg'
-import { getBlog } from '../../api-loading';
+// import { getBlog } from '../../api-loading';
 
 const BlogFilter = () => {
     // const [data,setData] = useState({})
