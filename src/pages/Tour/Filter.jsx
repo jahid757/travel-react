@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import trndingImage from '../../assets/images/trending2.jpg'
 import { Link } from 'react-router-dom';
 
@@ -7,9 +7,24 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { getTour } from '../../api-loading';
 
 
 const Filter = () => {
+    const [data,setData] = useState({
+        category:[],
+        tours:[]
+    })
+    const callApi = async () => {
+        const apiUrl = await getTour();
+        setData(apiUrl);
+      };
+    
+      useEffect(() => {
+        callApi();
+      }, []);
+
+
     return (
         <section className="trending pt-6 pb-0">
         <div className="container">
@@ -34,290 +49,58 @@ const Filter = () => {
                     </div>
 
                     <div className="row">
-                        <div className="col-lg-6 col-md-6 mb-4">
-                            <div className="trend-item rounded box-shadow">
-                                <div className="trend-image position-relative">
-                                    <img src={trndingImage} alt='' />
-                                    <div className="color-overlay"></div>
-                                </div>
-                                <div className="trend-content p-4 pt-5 position-relative">
-                                    <div className="trend-meta bg-theme white px-3 py-2 rounded">
-                                        <div className="entry-author">
-                                            <i className="icon-calendar"></i>
-                                            <span className="fw-bold"> 9 Days Tours</span>
-                                        </div>
-                                    </div>
-                                    <h5 className="theme mb-1"><i className="flaticon-location-pin"></i> Croatia</h5>
-                                    <h3 className="mb-1"><a href="tour-single.html">Piazza Castello</a></h3>
-                                    <div className="rating-main d-flex align-items-center pb-2">
-                                        <div className="rating">
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                        </div>
-                                        <span className="ms-2">(12)</span>
-                                    </div>
-                                    <p className=" border-b pb-2 mb-2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                                    <div className="entry-meta">
-                                        <div className="entry-author d-flex align-items-center">
-                                            <p className="mb-0"><span className="theme fw-bold fs-5"> $170.00</span> | Per person</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6 mb-4">
-                            <div className="trend-item box-shadow rounded">
-                                <div className="trend-image position-relative">
-                                <img src={trndingImage} alt='' />
-                                    <div className="color-overlay"></div>
-                                </div>
-                                <div className="trend-content p-4 pt-5 position-relative">
-                                    <div className="trend-meta bg-theme white px-3 py-2 rounded">
-                                        <div className="entry-author">
-                                            <i className="icon-calendar"></i>
-                                            <span className="fw-bold"> 9 Days Tours</span>
-                                        </div>
-                                    </div>
-                                    <h5 className="theme mb-1"><i className="flaticon-location-pin"></i> Greece</h5>
-                                    <h3 className="mb-1"><a href="tour-single.html">Santorini, Oia</a></h3>
-                                    <div className="rating-main d-flex align-items-center pb-2">
-                                        <div className="rating">
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                        </div>
-                                        <span className="ms-2">(38)</span>
-                                    </div>
-                                    <p className=" border-b pb-2 mb-2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                                    <div className="entry-meta">
-                                        <div className="entry-author d-flex align-items-center">
-                                            <p className="mb-0"><span className="theme fw-bold fs-5"> $180.00</span> | Per person</p>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6 mb-4">
-                            <div className="trend-item box-shadow rounded">
-                                <div className="trend-image position-relative">
-                                <img src={trndingImage} alt='' />
-                                    <div className="color-overlay"></div>
-                                </div>
-                                <div className="trend-content p-4 pt-5 position-relative">
-                                    <div className="trend-meta bg-theme white px-3 py-2 rounded">
-                                        <div className="entry-author">
-                                            <i className="icon-calendar"></i>
-                                            <span className="fw-bold"> 9 Days Tours</span>
-                                        </div>
-                                    </div>
-                                    <h5 className="theme mb-1"><i className="flaticon-location-pin"></i> Maldives</h5>
-                                    <h3 className="mb-1"><a href="tour-single.html">Hurawalhi Island</a></h3>
-                                    <div className="rating-main d-flex align-items-center pb-2">
-                                        <div className="rating">
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                        </div>
-                                        <span className="ms-2">(18)</span>
-                                    </div>
-                                    <p className=" border-b pb-2 mb-2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                                    <div className="entry-meta">
-                                        <div className="entry-author d-flex align-items-center">
-                                            <p className="mb-0"><span className="theme fw-bold fs-5"> $260.00</span> | Per person</p>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6 mb-4">
-                            <div className="trend-item box-shadow rounded">
-                                <div className="trend-image position-relative">
-                                <img src={trndingImage} alt='' />
-                                    <div className="color-overlay"></div>
-                                </div>
-                                <div className="trend-content p-4 pt-5 position-relative">
-                                    <div className="trend-meta bg-theme white px-3 py-2 rounded">
-                                        <div className="entry-author">
-                                            <i className="icon-calendar"></i>
-                                            <span className="fw-bold"> 5 Days Tours</span>
-                                        </div>
-                                    </div>
-                                    <h5 className="theme mb-1"><i className="flaticon-location-pin"></i> Greece</h5>
-                                    <h3 className="mb-1"><a href="tour-single.html">Santorini, Oia</a></h3>
-                                    <div className="rating-main d-flex align-items-center pb-2">
-                                        <div className="rating">
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                        </div>
-                                        <span className="ms-2">(38)</span>
-                                    </div>
-                                    <p className=" border-b pb-2 mb-2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                                    <div className="entry-meta">
-                                        <div className="entry-author d-flex align-items-center">
-                                            <p className="mb-0"><span className="theme fw-bold fs-5"> $180.00</span> | Per person</p>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6 mb-4">
-                            <div className="trend-item rounded box-shadow">
-                                <div className="trend-image position-relative">
-                                <img src={trndingImage} alt='' />
-                                    <div className="color-overlay"></div>
-                                </div>
-                                <div className="trend-content p-4 pt-5 position-relative">
-                                    <div className="trend-meta bg-theme white px-3 py-2 rounded">
-                                        <div className="entry-author">
-                                            <i className="icon-calendar"></i>
-                                            <span className="fw-bold"> 9 Days Tours</span>
-                                        </div>
-                                    </div>
-                                    <h5 className="theme mb-1"><i className="flaticon-location-pin"></i> Croatia</h5>
-                                    <h3 className="mb-1"><a href="tour-single.html">Piazza Castello</a></h3>
-                                    <div className="rating-main d-flex align-items-center pb-2">
-                                        <div className="rating">
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                        </div>
-                                        <span className="ms-2">(12)</span>
-                                    </div>
-                                    <p className=" border-b pb-2 mb-2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                                    <div className="entry-meta">
-                                        <div className="entry-author d-flex align-items-center">
-                                            <p className="mb-0"><span className="theme fw-bold fs-5"> $170.00</span> | Per person</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6 mb-4">
-                            <div className="trend-item box-shadow rounded">
-                                <div className="trend-image position-relative">
-                                <img src={trndingImage} alt='' />
-                                    <div className="color-overlay"></div>
-                                </div>
-                                <div className="trend-content p-4 pt-5 position-relative">
-                                    <div className="trend-meta bg-theme white px-3 py-2 rounded">
-                                        <div className="entry-author">
-                                            <i className="icon-calendar"></i>
-                                            <span className="fw-bold"> 9 Days Tours</span>
-                                        </div>
-                                    </div>
-                                    <h5 className="theme mb-1"><i className="flaticon-location-pin"></i> Greece</h5>
-                                    <h3 className="mb-1"><a href="tour-single.html">Santorini, Oia</a></h3>
-                                    <div className="rating-main d-flex align-items-center pb-2">
-                                        <div className="rating">
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                        </div>
-                                        <span className="ms-2">(38)</span>
-                                    </div>
-                                    <p className=" border-b pb-2 mb-2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                                    <div className="entry-meta">
-                                        <div className="entry-author d-flex align-items-center">
-                                            <p className="mb-0"><span className="theme fw-bold fs-5"> $180.00</span> | Per person</p>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6 mb-4">
-                            <div className="trend-item box-shadow rounded">
-                                <div className="trend-image position-relative">
-                                <img src={trndingImage} alt='' />
-                                    <div className="color-overlay"></div>
-                                </div>
-                                <div className="trend-content p-4 pt-5 position-relative">
-                                    <div className="trend-meta bg-theme white px-3 py-2 rounded">
-                                        <div className="entry-author">
-                                            <i className="icon-calendar"></i>
-                                            <span className="fw-bold"> 9 Days Tours</span>
-                                        </div>
-                                    </div>
-                                    <h5 className="theme mb-1"><i className="flaticon-location-pin"></i> Maldives</h5>
-                                    <h3 className="mb-1"><a href="tour-single.html">Hurawalhi Island</a></h3>
-                                    <div className="rating-main d-flex align-items-center pb-2">
-                                        <div className="rating">
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                        </div>
-                                        <span className="ms-2">(18)</span>
-                                    </div>
-                                    <p className=" border-b pb-2 mb-2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                                    <div className="entry-meta">
-                                        <div className="entry-author d-flex align-items-center">
-                                            <p className="mb-0"><span className="theme fw-bold fs-5"> $260.00</span> | Per person</p>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6 mb-4">
-                            <div className="trend-item box-shadow rounded">
-                                <div className="trend-image position-relative">
-                                <img src={trndingImage} alt='' />
-                                    <div className="color-overlay"></div>
-                                </div>
-                                <div className="trend-content p-4 pt-5 position-relative">
-                                    <div className="trend-meta bg-theme white px-3 py-2 rounded">
-                                        <div className="entry-author">
-                                            <i className="icon-calendar"></i>
-                                            <span className="fw-bold"> 5 Days Tours</span>
-                                        </div>
-                                    </div>
-                                    <h5 className="theme mb-1"><i className="flaticon-location-pin"></i> Greece</h5>
-                                    <h3 className="mb-1"><a href="tour-single.html">Santorini, Oia</a></h3>
-                                    <div className="rating-main d-flex align-items-center pb-2">
-                                        <div className="rating">
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                        </div>
-                                        <span className="ms-2">(38)</span>
-                                    </div>
-                                    <p className=" border-b pb-2 mb-2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                                    <div className="entry-meta">
-                                        <div className="entry-author d-flex align-items-center">
-                                            <p className="mb-0"><span className="theme fw-bold fs-5"> $180.00</span> | Per person</p>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
 
+                        {
+
+                            data.tours.map((tour) => {
+                                const {tour_title,tour_description,single_banner,duration,package_price,rating} = tour;
+
+                                return(
+                                    <div className="col-lg-6 col-md-6 mb-4">
+                            <div className="trend-item rounded box-shadow">
+                                <div className="trend-image position-relative">
+                                    <img src={single_banner} alt='' />
+                                    <div className="color-overlay"></div>
+                                </div>
+                                <div className="trend-content p-4 pt-5 position-relative">
+                                    <div className="trend-meta bg-theme white px-3 py-2 rounded">
+                                        <div className="entry-author">
+                                            <i className="icon-calendar"></i>
+                                            <span className="fw-bold"> {duration} Days Tours</span>
+                                        </div>
+                                    </div>
+                                    <h5 className="theme mb-1"><i className="flaticon-location-pin"></i> {tour_title}</h5>
+                                    <h3 className="mb-1"><a href="tour-single.html">Piazza Castello</a></h3>
+                                    <div className="rating-main d-flex align-items-center pb-2">
+                                        <div className="rating">
+                                            <span className="fa fa-star checked"></span>
+                                            <span className="fa fa-star "></span>
+                                            <span className="fa fa-star "></span>
+                                            <span className="fa fa-star "></span>
+                                            <span className="fa fa-star "></span>
+                                        </div>
+                                        <span className="ms-2">({rating})</span>
+                                    </div>
+                                    <p className=" border-b pb-2 mb-2">{tour_description.substr(0, 67) + "..."}</p>
+                                    <div className="entry-meta">
+                                        <div className="entry-author d-flex align-items-center">
+                                            <p className="mb-0"><span className="theme fw-bold fs-5"> ${package_price}</span> | Per person</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                )
+                            })
+
+                        }
                         <div className="col-lg-12">
                             <div className="text-center">
                                 <Link to="/" className="nir-btn">Load More <i className="fa fa-long-arrow-alt-right"></i></Link>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
                 <div className="col-lg-4 ps-lg-4">
@@ -326,14 +109,15 @@ const Filter = () => {
                             <div className="sidebar-item mb-4">
                                 <h3 className="">Categories Type</h3>
                                 <ul className="sidebar-category1">
-                                    <li><input type="checkbox" checked/> Tours <span className="float-end">92</span></li>
-                                    <li><input type="checkbox"/> Attractions <span className="float-end">22</span></li>
-                                    <li><input type="checkbox"/> Day Trips <span className="float-end">35</span></li>
-                                    <li><input type="checkbox"/> Outdoor Activities <span className="float-end">41</span></li>
-                                    <li><input type="checkbox"/> Concert & Show <span className="float-end">11</span></li>
-                                    <li><input type="checkbox"/> Indoor <span className="float-end">61</span></li>
-                                    <li><input type="checkbox"/> Sight Seeing <span className="float-end">18</span></li>
-                                    <li><input type="checkbox"/> Travels <span className="float-end">88</span></li>
+                                        {
+                                            data.category.map((category) => {
+                                                return(
+                                                    <li><input type="checkbox"/> {category.name} <span className="float-end">{category.category_tour_count}</span></li>
+                                                )
+                                            })
+                                            
+                                        }
+                                    
                                 </ul>
                             </div>
 
@@ -354,9 +138,10 @@ const Filter = () => {
                                 <div className="range-slider mt-0">
                                     <p className="text-start mb-2">Price Range</p>
                                     <div data-min="0" data-max="2000" data-unit="$" data-min-name="min_price" data-max-name="max_price" className="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
-                                        <span className="min-value">0 $</span> 
-                                        <span className="max-value">20000 $</span>
-                                        <div className="ui-slider-range ui-widget-header ui-corner-all full" style={{left:" 0%", width: "100%;"}}></div>
+                                        <div className="d-flex align-items-center justify-content-between">
+                                        <p className="min-value">{data.max_price} $</p> 
+                                        <p className="max-value">{data.min_price > 0 ? data.min_price : '0'} $</p>
+                                        </div>
                                     </div>
                                     <div className="clearfix"></div>
                                 </div>

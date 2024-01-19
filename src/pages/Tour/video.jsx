@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getTour } from '../../api-loading';
 
 const Video = () => {
+
+    const [data,setData] = useState({
+        
+    })
+    const callApi = async () => {
+        const apiUrl = await getTour();
+        setData(apiUrl);
+      };
+    
+      useEffect(() => {
+        callApi();
+      }, []);
+
     return (
         // style="background-image:url(images/section-bg1.png); background-position:center;"
         <section className="discount-action pt-0" >
@@ -10,8 +24,8 @@ const Video = () => {
                     <div className="trend-content-main">
                         <div className="trend-content mb-5 pb-2 px-5">
                             <h5 className="mb-1 theme">Love Where Your're Going</h5>
-                            <h2><a href="detail-fullwidth.html">Explore Your Life, <span className="theme1"> Travel Where You Want!</span></a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <h2><a href="detail-fullwidth.html">{data.video_section_title}</a></h2>
+                            <p>{data.video_section_description}</p>
                         </div>
                         <div className="video-button text-center position-relative">
                              <div className="call-button text-center">
