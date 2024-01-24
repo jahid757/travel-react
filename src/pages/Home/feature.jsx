@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getHome } from "../../api-loading";
+import shape from '../../assets/images/shape4.png'
 
 const Feature = () => {
   const [data, setData] = useState({ 
@@ -47,7 +48,7 @@ useEffect(() => {
 
   return (
     // <section className="about-us pb-6 pt-10" style="background-image:url(images/shape4.png); background-position:center;">
-    <section className="about-us pb-6 pt-10">
+    <section className="about-us pb-6 pt-10" style={{backgroundImage:`url(${shape})`,backgroundPosition:'center'}}>
       <div className="container">
         <div className="section-title mb-6 w-50 mx-auto text-center">
           <h4 className="mb-1 theme1">Core Features</h4>

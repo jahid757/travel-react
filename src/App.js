@@ -19,6 +19,7 @@ import Cookie from "./pages/Cookie";
 import Terms from "./pages/Terms";
 import TourSingle from "./pages/Tour_Single";
 import BlogSingle from "./pages/Blog_Single";
+import Holiday from "./pages/Holiday";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/tour" element={<Tour />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/holiday" element={<Holiday />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/cookie" element={<Cookie />} />
         <Route path="/terms" element={<Terms />} />
