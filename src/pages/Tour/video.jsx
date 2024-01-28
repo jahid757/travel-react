@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getTour } from '../../api-loading';
+import background from '../../assets/images/section-bg1.png'
 
 const Video = () => {
 
@@ -17,7 +18,7 @@ const Video = () => {
 
     return (
         // style="background-image:url(images/section-bg1.png); background-position:center;"
-        <section className="discount-action pt-0" >
+        <section className="discount-action pt-0" style={{backgroundImage:`url(${background})`, backgroundPosition:'center'}} >
         <div className="container">
             <div className="call-banner rounded pt-10 pb-14">
                 <div className="call-banner-inner w-75 mx-auto text-center px-5">

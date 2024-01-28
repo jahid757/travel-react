@@ -96,6 +96,10 @@
     display: flex !important;
     align-items: center;
 }
+.swiper-slide.swiper-slide-prev{
+    margin-right: 0 !important;
+    /* padding-right: 30px !important; */
+}
 @media (max-width:1400px) {
     .banner .slider{
         height: 400px !important;

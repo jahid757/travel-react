@@ -41,7 +41,7 @@ const Partners = () => {
         >
           {data.map((partner) => {
             return (
-              <SwiperSlide className="col-md-3 col-sm-6">
+              <SwiperSlide key={partner.id} className="col-md-3 col-sm-6">
                 <div className="partner-item p-4 py-2 ">
                   <img src={partner.profile} alt="" />
                 </div>

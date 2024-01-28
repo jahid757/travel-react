@@ -61,11 +61,18 @@ export const getSingleBlog = async () => {
 
 // holidays page data
 export const getHolidays = async () => {
-  const apiUrl = await fetch(
-    "https://trawelfreeby.jdinfotech.net/api/holidays"
+
+  const req = await fetch(
+    `https://trawelfreeby.jdinfotech.net/trawelfreeby/api/holidays`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
   );
-  const result = await apiUrl.json();
-  console.log(result.data);
+  const response = await req.json();
+  return response.data;
 };
 
 //tour page data
@@ -86,8 +93,16 @@ export const getTour = async () => {
 
 
 // single tour page
-export const getSingleTour = async () => {
-  const apiUrl = await fetch("https://trawelfreeby.jdinfotech.net/api/tours/1");
-  const result = await apiUrl.json();
-  console.log(result.data);
+export const getSingleTour = async (id) => {
+  const req = await fetch(
+    `https://trawelfreeby.jdinfotech.net/trawelfreeby/api/tours/${id}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  const response = await req.json();
+  return response.data;
 };
