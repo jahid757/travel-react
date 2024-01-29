@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import videoClip from '../../assets/video/tour.mp4'
+import { getHolidays } from "../../api-loading";
 
 const Hero = () => {
+
+  const [data, setData] = useState({
+    destination: [],
+    tour_exclusion: [],
+  });
+  const callApi = async () => {
+    const apiUrl = await getHolidays();
+    setData(apiUrl);
+  };
+
+  useEffect(() => {
+    callApi();
+  }, []);
+
   return (
     <section className="banner overflow-hidden banner-450">
       <div className="banner-main">
@@ -24,7 +39,7 @@ const Hero = () => {
           </div>
           <h1 className="mb-0">
             <a href="tour-single.html" className="white">
-              Create Your Journey Joyfull Through Us
+              {data.hero_title}
             </a>
           </h1>
         </div>

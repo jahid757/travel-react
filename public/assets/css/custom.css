@@ -100,6 +100,156 @@
     margin-right: 0 !important;
     /* padding-right: 30px !important; */
 }
+
+
+
+
+
+
+.trend-content1{
+    position:absolute;
+    bottom:0;
+    left: 0;
+    right: 0;
+    width:100%;
+    z-index:1;
+}
+
+
+
+.trending {
+    background-position: top right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.trending .trend-item, .trending .trend-item1, .trending .trend-item2 {
+    position: relative;
+    overflow: hidden;
+}
+.trending .trend-item::before, .trending .trend-item1::before, .trending .trend-item2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0;
+    bottom: 0;
+    height: 4px;
+    z-index: 2;
+}
+.trending .trend-item .trend-meta, .trending .trend-item1 .trend-meta, .trending .trend-item2 .trend-meta {
+    position: absolute;
+    top: -28px;
+    right: 20px;
+}
+.trending .trend-item .trend-image, .trending .trend-item1 .trend-image, .trending .trend-item2 .trend-image {
+    position: relative;
+}
+.trending .trend-item .trend-image img, .trending .trend-item1 .trend-image img, .trending .trend-item2 .trend-image img {
+    width: 100%;
+}
+.trending .trend-item .trend-image .trend-content, .trending .trend-item1 .trend-image .trend-content, .trending .trend-item2 .trend-image .trend-content {
+    z-index: 1;
+}
+.trending .trend-item .trend-image, .trending .trend-item1 .trend-image, .trending .trend-item2 .trend-image, .trending .trend-item .trend-image1, .trending .trend-item1 .trend-image1, .trending .trend-item2 .trend-image1 {
+    overflow: hidden;
+}
+.trending .trend-item .trend-content1, .trending .trend-item1 .trend-content1, .trending .trend-item2 .trend-content1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+}
+.trending .trend-item:hover::before, .trending .trend-item1:hover::before, .trending .trend-item2:hover::before {
+    width: 100%;
+}
+.trending .trend-item:hover .trend-image img, .trending .trend-item1:hover .trend-image img, .trending .trend-item2:hover .trend-image img {
+    transform: scale(1.1);
+}
+.trending .trend-item:hover .color-overlay, .trending .trend-item1:hover .color-overlay, .trending .trend-item2:hover .color-overlay {
+    height: 100%;
+}
+.trending .trend-item:hover .color-overlay, .trending .trend-item1:hover .color-overlay, .trending .trend-item2:hover .color-overlay {
+    height: 100%;
+}
+.trending .trend-item1::before {
+    display: none;
+}
+.trending .trend-item2 {
+    position: relative;
+    overflow: hidden;
+}
+.trending .trend-item2 > a {
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+}
+.trending .trend-item2::before {
+    display: none;
+}
+.trending .trend-image1 {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    transition: all ease-in-out 0.5s;
+}
+.trending .trend-image1 > a {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    display: inline-block;
+    transition: all ease-in-out 0.5s;
+}
+.section-shape {
+    position: absolute;
+    top: -96px;
+    left: 0;
+    width: 100%;
+    height: 96px;
+    background-size: contain;
+    background-repeat: repeat-x;
+    z-index: 1;
+}
+.section-shape.section-shape1 {
+    transform: rotate(180deg);
+}
+@media (max-width: 991px) {
+    .section-shape {
+        background-size: cover;
+   }
+}
+@media (max-width: 767px) {
+    .trending .trend-item .trend-image1 {
+        height: 340px;
+        margin-bottom: 1rem;
+   }
+    .trending .trend-item2 {
+        height: 300px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+   }
+    .trend-packages .trend-full .col-lg-5 {
+        padding: 0 !important;
+   }
+}
+@media (max-width: 400px) {
+    .trending .trend-item .trend-image .trend-meta {
+        position: relative;
+        display: block !important;
+        text-align: center;
+   }
+    .trending .trend-item .trend-image .trend-meta .entry-author {
+        margin-bottom: 15px;
+   }
+}
+.entry-author img {
+    width: 36px !important;
+    height: 36px !important;
+    display: inline-block !important;
+}
+
 @media (max-width:1400px) {
     .banner .slider{
         height: 400px !important;

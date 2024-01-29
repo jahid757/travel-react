@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import img from '../../assets/images/destination10.jpg'
 import img1 from '../../assets/images/destination1.jpg'
 import shape from '../../assets/images/shape-1.png'
+import { getHolidays } from '../../api-loading';
 
 const TopDestination = () => {
+    const [data, setData] = useState({
+        destination: [],
+        tour_exclusion: [],
+      });
+      const callApi = async () => {
+        const apiUrl = await getHolidays();
+        setData(apiUrl);
+      };
+    
+      useEffect(() => {
+        callApi();
+      }, []);
     return (
-        //  style="background-image:url(images/shape-1.png); background-position:center;"
             <section className="trending pb-0 pt-6" style={{backgroundImage:`url(${shape})`,backgroundPosition:'center'}}>
         <div className="container">
             <div className="section-title mb-6 w-50 mx-auto text-center">
                 <h4 className="mb-1 theme1">Top Destinations</h4>
-                <h2 className="mb-1">Explore <span className="theme">Top Destinations</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <h2 className="mb-1">{data.destination_title}</h2>
+                <p>{data.destination_description}</p>
             </div>
             <div className="row align-items-center">
                 <div className="col-lg-5 mb-4">

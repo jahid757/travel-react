@@ -9,6 +9,7 @@ import TourPackage from './tour-package';
 import Video from './video';
 import Testimonial from './../Home/testimonial';
 import Blog from './blog';
+import TourDeal from './tour-deal';
 
 const Holiday = () => {
     return (
@@ -19,6 +20,7 @@ const Holiday = () => {
                 <TopDestination/>
                 <Exclution/>
                 <TourPackage/>
+                <TourDeal/>
                 <Video/>
                 <Testimonial/>
                 <Blog/>
