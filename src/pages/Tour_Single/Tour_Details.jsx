@@ -24,7 +24,7 @@ const TourDetails = () => {
     useEffect(() => {
         setID(1)
       callApi(id);
-    }, []);
+    }, [id]);
   
     console.log(data)
 
