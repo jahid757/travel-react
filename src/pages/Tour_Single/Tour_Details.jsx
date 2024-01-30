@@ -15,12 +15,14 @@ const TourDetails = () => {
   })
   const [id,setID] = useState(1);
   
+  
   const callApi = async (id) => {
       const apiUrl = await getSingleTour(id);
       setData(apiUrl);
     };
   
     useEffect(() => {
+        setID(1)
       callApi(id);
     }, []);
   
