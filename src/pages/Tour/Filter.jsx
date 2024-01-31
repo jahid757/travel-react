@@ -30,25 +30,25 @@ const Filter = () => {
         <div className="container">
             <div className="row">
                 <div className="col-lg-8">
-                    <div className="list-results d-flex align-items-center justify-content-between">
-                        <div className="list-results-sort">
-                            <p className="m-0">Showing 1-5 of 80 results</p>
-                        </div>
-                        <div className="click-menu d-flex align-items-center justify-content-between">
-                            <div className="change-list me-2"><a href="tour-list.html"><i className="fa fa-bars rounded"></i></a></div>
-                            <div className="change-grid f-active me-2"><a href="tour-grid.html"><i className="fa fa-th rounded"></i></a></div>
-                            <div className="sortby d-flex align-items-center justify-content-between ml-2">
-                                <select className="niceSelect">
-                                    <option value="1" >Sort By</option>
-                                    <option value="2">Average rating</option>
-                                    <option value="3">Price: low to high</option>
-                                    <option value="4">Price: high to low</option>
-                                </select> 
-                            </div>
-                        </div>
+                <div className="list-results d-flex align-items-center justify-content-between">
+                <div className="list-results-sort">
+                    <p className="m-0">Showing 1-5 of 80 results</p>
+                </div>
+                <div className="click-menu d-flex align-items-center justify-content-between">
+                    <div className="change-list f-active me-2"><a href="tour-list.html"><i className="fa fa-bars rounded"></i></a></div>
+                    <div className="change-grid me-2"><a href="tour-grid.html"><i className="fa fa-th rounded"></i></a></div>
+                    <div className="sortby d-flex align-items-center justify-content-between ml-2">
+                        <select className="niceSelect">
+                            <option value="1" >Sort By</option>
+                            <option value="2">Average rating</option>
+                            <option value="3">Price: low to high</option>
+                            <option value="4">Price: high to low</option>
+                        </select> 
                     </div>
+                </div>
+            </div>
 
-                    <div className="row">
+                    {/* <div className="row">
 
                         {
 
@@ -101,7 +101,64 @@ const Filter = () => {
                         </div>
 
 
+                    </div> */}
+
+                    <div className="destination-list">
+                
+
+                <div className="trend-full bg-white rounded box-shadow overflow-hidden p-4 mb-4">
+                    <div className="row">
+                        <div className="col-lg-4 col-md-3">
+                           <div className="trend-item2 rounded">
+                                {/* <a href="tour-single.html" style="background-image: url(images/destination/destination15.jpg);"></a> */}
+                                 <div className="color-overlay"></div>
+                            </div> 
+                        </div>
+                        <div className="col-lg-5 col-md-6">
+                            <div className="trend-content position-relative text-md-start text-center">
+                                <small>6+ Hours | Full Day Tours</small>
+                                <h3 className="mb-1"><a href="tour-single.html">Adriatic Adventure–Zagreb To Athens</a></h3>
+                                <h6 className="theme mb-0"><i className="icon-location-pin"></i> Greece</h6>
+                                <p className="mt-4 mb-0">Taking Safety Measures <br/><Link href=""><span className="theme"> Free cancellation</span></Link></p>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-md-3">
+                            <div className="trend-content text-md-end text-center">
+                                <div className="rating">
+                                    <span className="fa fa-star checked"></span>
+                                    <span className="fa fa-star checked"></span>
+                                    <span className="fa fa-star checked"></span>
+                                    <span className="fa fa-star checked"></span>
+                                    <span className="fa fa-star checked"></span>
+                                </div>
+                                <small>200 Reviews</small>
+                                <div className="trend-price my-2">
+                                    <span className="mb-0">From</span>
+                                    <h3 className="mb-0">$160</h3>
+                                    <small>Per Adult</small>
+                                </div>
+                                <a href="tour-single.html" className="nir-btn">View Detail</a>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+
+
+                <div className="text-center">
+                    <button className="nir-btn">Load More <i className="fa fa-long-arrow-alt-right"></i></button>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
                 </div>
                 <div className="col-lg-4 ps-lg-4">
                     <div className="sidebar-sticky">
